@@ -39,3 +39,10 @@
          #{"from"} "with" "IN"             ; return all IN words excluding "with"
          #{"russia" "love"} "finger" "NN"  ; return all NN words excluding "finger""
          #{"gold"} "gold" "JJ")))          ; gold is the only JJ so it is returned
+
+(deftest find-unknown-genres-test
+  (are [genres result] (= result (find-unknown-genres genres))
+       ["jamesbond" "foo"] ["foo"]
+       ["jamesbond" "proverbs" "foo"] ["foo"]
+       ["foo" "bar"] ["foo" "bar"]
+       [] nil))

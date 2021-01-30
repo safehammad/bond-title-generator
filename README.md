@@ -22,10 +22,10 @@ The generator works as follows:
 This application can generate other novel output in addition to James Bond film titles. The full list is:
 
 - James Bond film titles.
-- Star Wars film titles
-- Harry Potter film/book titles
-- Power Rangers Dino Charge series episode titles
-- Famous English proverbs and sayings
+- Star Wars film titles.
+- Harry Potter film/book titles.
+- Power Rangers Dino Charge series episode titles.
+- Famous English proverbs and sayings.
 
 In the case of English proverbs, a blend of proverbs is called a [malaphor](https://www.thoughtco.com/malaphor-word-play-1691298). Here are some examples:
 
@@ -41,16 +41,27 @@ To install the application, simply check out the source from Github.
 
 ## Usage
 
-To generate a James Bond film title:
+1. To generate a James Bond film title:
 
 ```
 $ clj -M -m safehammad.bond
 ```
 
-To generate other novel output:
+2. To generate other novel output:
 
 ```
 $ clj -M -m safehammad.bond [jamesbond|starwars|harrypotter|proverbs|powerrangers]
+```
+
+For example, to generate a novel Harry Potter title:
+```
+$ clj -M -m safehammad.bond harrypotter
+```
+
+3. And you can mix output from multiple genres! For example, mix James Bond and Harry Potter:
+
+```
+$ clj -M -m safehammad.bond jamesbond harrypotter
 ```
 
 ## Tests
