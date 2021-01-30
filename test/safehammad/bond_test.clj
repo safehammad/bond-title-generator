@@ -1,6 +1,6 @@
-(ns bond.core-test
+(ns safehammad.bond-test
   (:require [clojure.test :refer :all]
-            [bond.core :refer :all]))
+            [safehammad.bond :refer :all]))
 
 (deftest pos->words-test
   (let [templates ["From/IN/ Russia/NN/ with/IN/ Love/NN/"
