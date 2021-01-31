@@ -52,7 +52,7 @@
 (defn generate [genres]
   (if-let [unknown-genres (find-unknown-genres genres)]
     (str "UNKNOWN GENRES: " unknown-genres)
-    (->> genres (map keyword) (map template-map) (apply concat) generate-title))) 
+    (->> genres (map keyword) (map template-map) (apply concat) generate-title)))
 
 (defn -main
   "Print randomly generated James Bond film title."
