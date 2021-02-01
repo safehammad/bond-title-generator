@@ -49,12 +49,12 @@
   (let [template-names (map name (keys template-map))]
     (seq (remove (set template-names) genres))))
 
-(defn generate [genres]
+(defn generate [& genres]
   (if-let [unknown-genres (find-unknown-genres genres)]
-    (str "UNKNOWN GENRES: " unknown-genres)
+    (str "UNKNOWN GENRES: " (str/join ", " unknown-genres))
     (->> genres (map keyword) (map template-map) (apply concat) generate-title)))
 
 (defn -main
   "Print randomly generated James Bond film title."
   ([] (-main "jamesbond"))
-  ([& genres] (println (generate genres))))
+  ([& genres] (println (apply generate genres))))
