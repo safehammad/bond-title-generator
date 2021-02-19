@@ -78,6 +78,21 @@ If you're hacking on this, you might want to automatically run the tests on any 
 $ ./bin/kaocha --watch
 ```
 
+## Docker
+
+To build and run in Docker:
+
+```
+$ docker build -t bond .
+$ docker run --rm bond
+```
+
+Arguments can be provided as usual:
+
+```
+$ docker run --rm bond harrypotter proverbs
+```
+
 ## License
 
 Copyright © 2020-2021 Safe Hammad

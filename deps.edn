@@ -3,4 +3,15 @@
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}}
 
  :aliases
- {:kaocha-runner {:extra-deps {lambdaisland/kaocha {:mvn/version "1.0.732"}}}}}
+ {:kaocha-runner {:extra-deps {lambdaisland/kaocha {:mvn/version "1.0.732"}}}
+
+  ;; To generate uberjar: clojure -X:depstar
+  :depstar {:replace-deps {seancorfield/depstar {:mvn/version "2.0.161"}}
+            :exec-fn hf.depstar/uberjar
+            :exec-args {:sync-pom true
+                        :group-id safehammad
+                        :artifact-id bond
+                        :aot true
+                        :main-class "safehammad.bond"
+                        :exclude [".*swp"]  ; exclude vim swap files
+                        :jar "bond.jar"}}}}
